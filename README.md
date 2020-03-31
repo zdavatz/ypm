@@ -7,3 +7,4 @@ ywesee Pharma Monitor
 3. Make Hash-Tags out of Keywords and make Hash-Tags clickable.
 4. Sort monitored articles by country. 
 5. Show article count by country.
+6. Keywords and RSS-Feed-Links must be stored in a DB.
