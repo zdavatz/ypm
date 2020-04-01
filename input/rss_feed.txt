@@ -38,4 +38,6 @@ https://www.cnbc.com/id/19794221/device/rss/rss.html
 https://www.cnbc.com/id/100003114/device/rss/rss.html
 https://www.cnbc.com/id/10000108/device/rss/rss.html
 https://www.cnbc.com/id/10001147/device/rss/rss.html
+https://www.cnbc.com/id/15837362/device/rss/rss.html2
 http://www.pharmabiz.com/Includes/xmlInclude/Pharmabizrss.xml
+https://www.firstwordpharma.com/
