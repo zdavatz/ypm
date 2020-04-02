@@ -9,8 +9,14 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.8.3",
+    "axios": "^0.19.2",
+    "colors": "^1.4.0",
+    "geojson": "^0.5.0",
     "jquery": "^3.4.1",
-    "meteor-node-stubs": "^1.0.0"
+    "lodash": "^4.17.15",
+    "meteor-node-stubs": "^1.0.0",
+    "rss-parser": "^3.7.6",
+    "sheetrock": "^1.1.4"
   },
   "meteor": {
     "mainModule": {
