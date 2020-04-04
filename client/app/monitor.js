@@ -29,7 +29,16 @@ function getFilters(items,field) {
 
 
 Template.registerHelper('items',()=>{
-    return Items.find({},{sort:{createdAt: -1}})
+
+    var q = {}
+    if (App.getSetting('countryFiltered')) {
+        var country = App.getSetting('countryFiltered').toLowerCase()
+        q.country = {
+            '$in': [country]
+        }
+    }
+
+    return Items.find(q,{sort:{createdAt: -1}})
 });
 
 /* -------------------------------------------------------------------------- */

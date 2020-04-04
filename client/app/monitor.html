@@ -8,6 +8,8 @@
         <div class="column is-3 notification is-light is-vh is-radiusless">
 
 
+            {{#if filtered}}
+
             <h4 class="subtitle is-4">Countries</h4>
             <p class="content is-small">
                 Filter news by country
@@ -26,6 +28,12 @@
                  
                 {{/each}}
             </div>
+
+            {{else}}
+            <br/>
+                <h4 class="title is-4">Scrapping</h4>
+                <p>There is no filtered data yet</p>
+            {{/if}}
 
         </div>
 

@@ -12,6 +12,7 @@ import './data/countries.js'
 
 DbStats = {}
 DbStats.ItemsTotal = Items.find().count()
+DbStats.ItemsFilteredBoth = Items.find({isFeed: true, hasKeyword: {$exists:true}, country: {$exists:true}}).count()
 DbStats.ItemsFiltered = Items.find({isBlank:false}).count();
 DbStats.ItemsWithKeywords = Items.find({hasKeyword:true}).count();
 
@@ -51,7 +52,7 @@ if (Meteor.isDevelopment) {
   console.log('IsDevelopment: '.success, Meteor.isDevelopment)
   CronConfigs.cornLater = 'every 3 minutes'
 
-  // checkFeeds(App.readAssets('feeds.txt', 'text'))
+  checkFeeds(App.readAssets('feeds.txt', 'text'))
 
 } else {
   CronConfigs.cornLater = 'every 7 minutes'
@@ -73,7 +74,7 @@ SyncedCron.add({
 /** ----------------------------- */
 // 'items'
 Meteor.publish(null,function(options){
-  return Items.find({isFeed: true, isBlank: false},{limit:100})
+  return Items.find({isFeed: true, hasKeyword: {$exists:true}, country: {$exists:true}},{limit:100})
 })
 
 
