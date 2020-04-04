@@ -23,3 +23,5 @@ Leuprorelin
 Lucrin
 Degarelix
 Firmagon
+Corona
+Covid19
