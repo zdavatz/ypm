@@ -28,11 +28,16 @@ Meteor.startup(() => {
 /** isDevelopment */
 Meteor.startup(() => {
 })
+
+if(Items.find().count() == 0){
+  checkFeeds(App.readAssets('feeds.txt', 'text'))
+}
+
 if (Meteor.isDevelopment) {
   console.log('Development: Cron[Running]'.progress)
   console.log('IsDevelopment: '.success, Meteor.isDevelopment)
   CronConfigs.cornLater = 'every 3 minutes'
-  // checkFeeds(App.readAssets('feeds.txt', 'text'))
+  // 
 } else {
   CronConfigs.cornLater = 'every 7 minutes'
 }

@@ -90,7 +90,7 @@ parseRSS = function (rss) {
             post.isBlank = false;
             //====================================
             //      If no Keywords
-            if (!c && !hasKeyword) {
+            if (!c && !post.hasKeyword) {
                 console.log('Skipped'.red, "No Keyword nor, country is captured")
                 post.isBlank = true
                 return 

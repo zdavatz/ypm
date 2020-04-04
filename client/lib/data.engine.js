@@ -10,6 +10,7 @@ Data.countArra = function (arr,country) {
     arr.forEach(function (x) {
         counts[x] = (counts[x] || 0) + 1;
     });
+    console.log(country)
     var counts = _.chain(counts).map((value, key) => ({ [country]: key, counts: value })).value()
     return counts;
 }

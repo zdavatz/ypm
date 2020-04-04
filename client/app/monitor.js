@@ -13,8 +13,8 @@ Meteor.startup(()=>{
 function getFilters(items,field) {
     var countries = []
     _.map(items, (item) => {
-        if (countries.indexOf(item.country) === -1) {
-            countries.push(item.country);
+        if (countries.indexOf(item[field]) === -1) {
+            countries.push(item[field]);
         }
     })
     var newArr = Data.mergeArrays(countries)
@@ -27,6 +27,7 @@ function getFilters(items,field) {
     return counts
 }
 
+/* -------------------------------------------------------------------------- */
 
 Template.registerHelper('items',()=>{
 
@@ -51,6 +52,7 @@ Template.registerHelper('filtered',()=>{
 /* -------------------------------------------------------------------------- */
 Template.registerHelper('filteredKW',()=>{
     var items = Items.find({},{sort:{createdAt: -1}}).fetch();
-    var countries = getFilters(items);
-    return countries
+    var keywords = getFilters(items, 'keyword');
+    console.log(keywords)
+    return keywords
 })
