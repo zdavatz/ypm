@@ -8,3 +8,10 @@ ywesee Pharma Monitor
 4. Sort monitored articles by country. 
 5. Show article count by country.
 6. Keywords and RSS-Feed-Links must be stored in a DB.
+
+## Running the App
+```
+meteor npm i
+meteor
+
+```
