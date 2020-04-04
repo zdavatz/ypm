@@ -1,21 +1,96 @@
-import { Meteor } from 'meteor/meteor';
+import {
+  Meteor
+} from 'meteor/meteor';
 import _ from 'lodash'
+import Console from './lib/logs.js'
 import '../lib/col.js'
 /** */
 import App from './app/app.js'
-import  './feeds.reader.js'
+import './app/feeds.reader.js'
 import './data/countries.js'
-import Filters from './filters/filters.js'
 
 
+DbStats = {}
+DbStats.ItemsTotal = Items.find().count()
+DbStats.ItemsFiltered = Items.find({isBlank:false}).count();
+DbStats.ItemsWithKeywords = Items.find({hasKeyword:true}).count();
+
+log(JSON.stringify(DbStats, null, 2))
 
 
+CronConfigs = {
+  freq: 3,
+  dev: 2,
+  prod: 7,
+  cornLater: ""
+}
 
 
+SyncedCron.start();
+
+
+/** */
 
 Meteor.startup(() => {
+
   setCountries()
+
+
 });
+
+/** isDevelopment */
+Meteor.startup(() => {
+ 
+  
+
+})
+
+
+if (Meteor.isDevelopment) {
+  console.log('Development: Cron[Running]'.progress)
+  console.log('IsDevelopment: '.success, Meteor.isDevelopment)
+  CronConfigs.cornLater = 'every 3 minutes'
+
+  // checkFeeds(App.readAssets('feeds.txt', 'text'))
+
+} else {
+  CronConfigs.cornLater = 'every 7 minutes'
+}
+
+
+SyncedCron.add({
+  name: 'CronParser',
+  schedule: function (parser) {
+    return parser.text(CronConfigs.cornLater);
+  },
+  job: function () {
+    console.log('SyncdCron: Feed Parser {CHECK}')
+    checkFeeds(App.readAssets('feeds.txt', 'text'))
+    console.log('SyncdCron: Feed Parser {SUCCESS}')
+  }
+});
+
+/** ----------------------------- */
+// 'items'
+Meteor.publish(null,function(options){
+  return Items.find({isFeed: true, isBlank: false},{limit:100})
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /**
  * Setting Countries [Startup]
  */
@@ -32,17 +107,18 @@ function setCountries() {
     })
     console.log('====== Countries Data Set: Success =======')
   } else {
-    console.log('====== Countries Data Set: Exists =======')
+    console.log('====== Countries Data Set: SET: TRUE =======')
   }
 }
 
 
 
 
-checkFeeds(App.readAssets('feeds.txt','text'))
+
 
 
 /** */
+// 
 // console.log(countries)
 // console.log(Filters.checkStrArr('USA is here', countries))
 // App.readAssets('feeds.txt','text')

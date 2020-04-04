@@ -3,6 +3,7 @@
  */
 
 filters = {}
+/** */
 filters.checkStrArr = (str,arr)=>{
     var regex = new RegExp("\\b(?:" + arr.join("|") + ")\\b", "gi");
 	var x = str.match(regex, 'gi')

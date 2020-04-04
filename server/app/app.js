@@ -4,6 +4,10 @@ import {
 import '../../lib/col.js'
 import _ from 'lodash';
 app = {}
+/* -------------------------------------------------------------------------- */
+/*                                 readAssets                                 */
+/* -------------------------------------------------------------------------- */
+
 app.readAssets = (file, type) => {
     try {
         console.log('Reading '+type+' file',file)
@@ -26,5 +30,6 @@ app.readAssets = (file, type) => {
         throw new Meteor.Error('app-readAssetsErr', err)
     }
 }
+/* -------------------------------------------------------------------------- */
 
 module.exports = app;

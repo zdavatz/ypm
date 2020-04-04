@@ -1,0 +1,56 @@
+<template name="monitor">
+<!--  -->
+    <div class="columns is-marginless">
+        <div class="column is-1 notification is-darkx is-vh is-radiusless is-marginless">
+            
+        </div>
+
+        <div class="column is-3 notification is-light is-vh is-radiusless">
+
+
+            <h4 class="subtitle is-4">Countries</h4>
+            <p class="content is-small">
+                Filter news by country
+            </p>
+            <br/>
+
+
+
+
+            <div class="tags ">
+                {{#each filtered}}
+                 <span class="tag is-primary is-rounded is-large is-clickable">
+                    <span class="is-capitalized">{{country}}</span>  &nbsp; <span class="subtitle is-5"> {{counts}}</span>
+                 </span> 
+
+                 
+                {{/each}}
+            </div>
+
+        </div>
+
+        <div class="column is-6 is-vh notification is-light  is-radiusless">
+            <br/>
+            {{#each items}}
+
+            <div class="notification is-white has-shadow-1">
+                <span
+                  class="tag is-outlinedx is-info is-small is-rounded is-disabled is-capitalized is-tag-float">{{country}}</span>
+                <span class="has-text-info">{{feedTitle}}| {{country}}</span> - <span
+                  class="has-text-warning">{{moFromNow createdAt withoutSuffix}}</span> <br />
+                <a href="{{link}}" target="_blank" title="{{title}}" class=""> {{title}} </a> <br />
+              </div>
+
+
+            {{/each}}
+            <br/>
+        </div>
+
+        <div class="column is-6 is-vh ">
+            <!-- Secondery Filter -->
+        </div>
+
+
+    </div>
+</template>
+
