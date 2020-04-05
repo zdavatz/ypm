@@ -58,18 +58,20 @@ parseRSS = function (rss) {
 }
 
 
-
+function arrToLowerCase(arr){
+    var arr = arr.map((item) => {
+        return item.toLowerCase()
+    })
+    return arr
+}
 
 function checkPost(post) {
     //====================================
     // Checking Country
     var country = Filters.checkStrArr(post.title, countries);
     if (country && country.length) {
-        console.log('Progress '.progress,'Found Country: '.success, country, entry.title);
-        var country = country.map((country) => {
-            return country.toLowerCase()
-        })
-        post.country = country;
+        console.log('Progress '.progress,'Found Country: '.success, country);
+        post.country = arrToLowerCase(country);
         // Find country
         // var c = Countries.findOne({
         //     $or: [{
@@ -101,14 +103,16 @@ function checkPost(post) {
     var hasKeyword = Filters.checkStrArr(post.title, keywords)
     if (hasKeyword && hasKeyword.length) {
         console.log('Progress'.progress, "Keyword detected: ", hasKeyword)
-        post.keyword = hasKeyword ? hasKeyword : null;
+        post.keyword = arrToLowerCase(hasKeyword);
         post.hasKeyword = hasKeyword;
     }
 
     //====================================
     if (post.country && post.country.length && post.keyword && post.keyword.length) {
         post.isBlank = false
-        console.log('SUCCESS: Found Keyword and Country'.progress, post.title)
+        console.log('------ SUCCESS------'.green)
+        console.log('SUCCESS: Found Keyword and Country'.progress, post.country, post.keyword)
+        console.log('------ Inserting------'.progress)
         delete post.categories
         delete post["dc:creator"]
         delete post["dc:date"]

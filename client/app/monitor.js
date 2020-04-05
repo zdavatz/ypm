@@ -53,6 +53,5 @@ Template.registerHelper('filtered',()=>{
 Template.registerHelper('filteredKW',()=>{
     var items = Items.find({},{sort:{createdAt: -1}}).fetch();
     var keywords = getFilters(items, 'keyword');
-    console.log(keywords)
     return keywords
 })
