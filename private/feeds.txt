@@ -48,3 +48,10 @@ https://www.nzz.ch/wissenschaft.rss
 https://www.nzz.ch/wirtschaft.rss
 https://www.nzz.ch/international.rss
 https://www.nzz.ch/recent.rss
+https://feedity.com/swissmedic-ch/UlNSUlBSWg.rss
+https://feedity.com/swissmedic-ch/UlNSUlBRVw.rss
+http://ajhp.highwire.org/rss/current.xml
+http://ajhp.highwire.org/rss/recent.xml
+http://ajhp.highwire.org/rss/ahead.xml
+http://ajhp.highwire.org/rss/mfr.xml
+http://ajhp.highwire.org/rss/mfc.xml
