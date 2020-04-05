@@ -34,3 +34,5 @@ Virus
 Xtandi
 Zoladex
 pharma
+Chloroquin
+Hydroxychloroquin
