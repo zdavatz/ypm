@@ -55,3 +55,4 @@ http://ajhp.highwire.org/rss/recent.xml
 http://ajhp.highwire.org/rss/ahead.xml
 http://ajhp.highwire.org/rss/mfr.xml
 http://ajhp.highwire.org/rss/mfc.xml
+https://www.unisg.ch/de/wissen/newsroom/aktuell/rssnews
