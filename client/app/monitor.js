@@ -44,6 +44,7 @@ Template.registerHelper('filteredKW',()=>{
     var keywords = getFilters(items, 'keyword');
     return keywords
 })
+/* -------------------------------------------------------------------------- */
 
 function getQuery(){
     var q = {}
