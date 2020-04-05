@@ -65,7 +65,7 @@ function checkPost(post) {
     // Checking Country
     var country = Filters.checkStrArr(post.title, countries);
     if (country && country.length) {
-        // console.log('Progress '.progress,'Found Country: '.success, country, entry.title + ':' + entry.link);
+        console.log('Progress '.progress,'Found Country: '.success, country, entry.title);
         var country = country.map((country) => {
             return country.toLowerCase()
         })
