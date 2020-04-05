@@ -42,3 +42,9 @@ https://www.cnbc.com/id/15837362/device/rss/rss.html2
 http://www.pharmabiz.com/Includes/xmlInclude/Pharmabizrss.xml
 https://www.firstwordpharma.com/
 http://www.reddit.com/.rss
+http://www.reddit.com/r/news/.rss
+https://www.theverge.com/rss/index.xml
+https://www.nzz.ch/wissenschaft.rss
+https://www.nzz.ch/wirtschaft.rss
+https://www.nzz.ch/international.rss
+https://www.nzz.ch/recent.rss
