@@ -6,6 +6,9 @@ Apalutamide
 Bicalutamide
 Casodex
 Corona
+Coronavirus
+Covid
+Covid-19
 Covid19
 Dafalgan
 Darolutamide
@@ -27,10 +30,9 @@ Nubequa
 Paracetamol
 Patent
 Schweiz
+Virus
 Xtandi
 Zoladex
 pharma
-Virus
-Coronavirus
-Covid-19
-Covid
+Chloroquin
+Hydroxychloroquin

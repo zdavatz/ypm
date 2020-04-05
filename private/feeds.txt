@@ -109,3 +109,10 @@ https://www.yahoo.com/news/rss/world
 https://www1.cbn.com/app_feeds/rss/news/rss.php?section=world&mobile=false
 https://www2.bfarm.de/lieferengpass/lieferengpassRSS.xml
 https://wwwnc.cdc.gov/eid/rss/ahead-of-print.xml
+https://www.ema.europa.eu/en/news.xml
+https://www.ema.europa.eu/en/new-human-medicine-new.xml
+https://www.ema.europa.eu/en/human-medicine-new.xml
+https://www.ema.europa.eu/en/human-medicine-highlights-newsletter.xml
+https://www.ema.europa.eu/en/fees.xml
+https://www.ema.europa.eu/en/agendas-and-minutes.xml
+https://www.ema.europa.eu/en/whats-new.xml
