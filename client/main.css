@@ -310,3 +310,7 @@ svgx {
 .is-clickable{
   cursor: pointer;
 }
+
+.notification a:not(.button):not(.dropdown-item){
+  text-decoration: none !important;
+}

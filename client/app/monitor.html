@@ -1,9 +1,9 @@
 <template name="monitor">
 <!--  -->
     <div class="columns is-marginless">
-        <div class="column is-1 notification is-darkx is-vh is-radiusless is-marginless">
+        <div class="column is-1 notification is-darkx is-vh is-radiusless is-marginless is-hidden">
         </div>
-        <div class="column is-3 notification is-light is-vh is-radiusless">
+        <div class="column is-4 notification is-light is-vh is-radiusless">
             {{#unless filtered}}
             <br/>
                 <h4 class="title is-4">Checking....</h4>
@@ -29,12 +29,15 @@
             <br/>
             {{#each items}}
             <div class="notification is-white has-shadow-1">
-                <span
-                  class="tag is-outlinedx is-info is-small is-rounded is-disabled is-capitalized is-tag-float">{{country}}</span>                 
-                  <span
-                  class="tag is-outlined is-primary is-small is-rounded is-disabled is-capitalized is-pulled-left">{{keyword}}</span> <br/>
-                <span class="has-text-info">{{feedTitle}}</span> - <span
-                  class="has-text-warning">{{moFromNow createdAt withoutSuffix}}</span> <br />
+                <div class="tags is-tag-float">
+                    <span
+                    class="tag is-outlinedx is-info is-small is-rounded is-disabled is-capitalized ">{{country}}</span>                 
+                    <span
+                    class="tag is-outlined is-primary is-small is-rounded is-disabled is-capitalized ">{{keyword}}</span>
+                </div>
+
+                <span class="has-text-info content is-small">{{feedTitle}}</span> - <span
+                  class="has-text-warning content is-small">{{moFromNow createdAt withoutSuffix}}</span> <br />
                 <a href="{{link}}" target="_blank" title="{{title}}" class=""> {{title}} </a> <br />
               </div>
             {{/each}}
@@ -42,13 +45,12 @@
         </div>
         <div class="column is-3  notification is-light is-vh is-radiusless">
             <!-- Secondery Filter -->
-            <div class="notification" style="width:100%;">
+            <div class="notificationx" style="width:100%;">
                 {{#if filteredKW}}
-                <hr/>
                 <h4 class="subtitle is-4">Keywords</h4>
                 <div class="tags">
                     {{#each filteredKW}}
-                     <span class="tag is-white is-rounded is-large is-clickable has-shadow-1"  title="{{keyword}}">
+                     <span class="tag is-white is-rounded  is-large is-clickable has-shadow-1"  title="{{keyword}}">
                         <span class="is-capitalized">{{keyword}}</span>  &nbsp; <span class="subtitle is-5"> {{counts}}</span>
                      </span> 
                     {{/each}}
