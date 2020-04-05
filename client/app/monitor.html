@@ -38,9 +38,11 @@
             {{#each items}}
             <div class="notification is-white has-shadow-1">
                 <div class="tags is-tag-float">
-                    <span class="tag is-outlinedx is-info is-small is-rounded is-disabled is-capitalized "
+                    <span class="tag is-outlinedx is-info is-small is-rounded is-disabled is-capitalized setSettings"
+                    data-settings="selectedCountry:{{country}}"
                         style="font-size: 11px;">{{country}}</span>
-                    <span class="tag is-outlined is-primary is-small is-rounded is-disabled is-capitalized "
+                    <span class="tag is-outlined is-primary is-small is-rounded is-disabled is-capitalized setSettings"
+                    data-settings="selectedKeyword:{{keyword}}"
                         style="font-size: 11px;">{{keyword}}</span>
                 </div>
                 <p class="has-text-weight-bold">
@@ -61,7 +63,7 @@
                 {{#if getSetting 'selectedKeyword'}}
                 <p class="notification is-slight">
                     <span>Selected</span>
-                    <span class="tag is-primary is-medium setSettings is-rounded is-clickable is-capitalized"
+                    <span class="tag is-primary is-medium  is-rounded is-clickable is-capitalized setSettings"
                         data-settings="selectedKeyword:f">{{getSetting 'selectedKeyword'}} <button class="delete"></button></span>
                 </p>
                 {{/if}}
