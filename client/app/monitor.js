@@ -24,6 +24,28 @@ function getFilters(items,field) {
 }
 /* -------------------------------------------------------------------------- */
 Template.registerHelper('items',()=>{
+
+    var q = getQuery()
+    var items = Items.find(q,{sort:{createdAt: -1}}).fetch()
+
+    return items
+});
+/* -------------------------------------------------------------------------- */
+Template.registerHelper('filtered',()=>{
+    var q = getQuery()
+    var items = Items.find(q,{sort:{createdAt: -1}}).fetch();
+    var countries = getFilters(items, 'country');
+    return countries
+})
+/* -------------------------------------------------------------------------- */
+Template.registerHelper('filteredKW',()=>{
+    var q = getQuery()
+    var items = Items.find(q,{sort:{createdAt: -1}}).fetch();
+    var keywords = getFilters(items, 'keyword');
+    return keywords
+})
+
+function getQuery(){
     var q = {}
     if (App.getSetting('selectedCountry')) {
         var country = App.getSetting('selectedCountry').toLowerCase()
@@ -38,19 +60,6 @@ Template.registerHelper('items',()=>{
             '$in': [keyword]
         }
     }
+    return q
 
-
-    return Items.find(q,{sort:{createdAt: -1}}).fetch()
-});
-/* -------------------------------------------------------------------------- */
-Template.registerHelper('filtered',()=>{
-    var items = Items.find({},{sort:{createdAt: -1}}).fetch();
-    var countries = getFilters(items, 'country');
-    return countries
-})
-/* -------------------------------------------------------------------------- */
-Template.registerHelper('filteredKW',()=>{
-    var items = Items.find({},{sort:{createdAt: -1}}).fetch();
-    var keywords = getFilters(items, 'keyword');
-    return keywords
-})
+}
