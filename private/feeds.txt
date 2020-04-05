@@ -56,3 +56,8 @@ http://ajhp.highwire.org/rss/ahead.xml
 http://ajhp.highwire.org/rss/mfr.xml
 http://ajhp.highwire.org/rss/mfc.xml
 https://www.unisg.ch/de/wissen/newsroom/aktuell/rssnews
+https://www.who.int/rss-feeds/covid19-news-english.xml
+https://www.who.int/rss-feeds/news-english.xml
+https://www.who.int/feeds/entity/medicines/publications/drugalerts/en/rss.xml
+https://www.who.int/feeds/features/en/rss.xml
+https://www.who.int/feeds/entity/pmnch/en/rss.xml
