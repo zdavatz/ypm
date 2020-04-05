@@ -23,7 +23,8 @@ parseRSS = function (rss) {
     console.log("Checking Feed:".cyan, rss)
     parser.parseURL(rss, Meteor.bindEnvironment(function (err, feed) {
         if (err) {
-            console.log('Feed parser Err'.red, feed)
+            console.log('-----------------Err------------------')
+            console.log('Feed parser Err'.red, rss)
             console.log("this is an error".error);
             console.log(err)
             console.log('-----------------------------------')
@@ -31,99 +32,113 @@ parseRSS = function (rss) {
         }
         console.log('Progress: '.green, rss);
         feed.items.forEach(function (entry) {
+
+
             if (Items.findOne({
                     link: entry.link
                 })) {
-                console.log('warning'.yellow, 'Skipped: Already in the Database ', entry.title)
+                console.log('warning'.yellow, 'Skipped: Already in the Database '.yellow, entry.title)
                 return
             }
-            console.log('New Entry Process: ', entry.title)
+
             //================================
             // SettingD Defaults
             var post = entry;
             post.createdAt = new Date();
             post.isFeed = true;
-            
-            //====================================
-            // Checking Country
-            var country = Filters.checkStrArr(entry.title, countries);
-            if (country && country.length) {
-                console.log('Progress '.progress,'Found Country: '.success, country, entry.title + ':' + entry.link);
-                
-                // 
-                post.feedTitle = feed.title;
-                post.feedUrl = feed.feedUrl;
-                // 
-                var country = country.map((country) => {
-                    return country.toLowerCase()
-                })
-                post.country = country;
-                // Find country
-                var c = Countries.findOne({
-                    $or: [{
-                        'altSpellings': {
-                            $regex: country[0],
-                            $options: 'i'
-                        }
-                    }, {
-                        'name.common': {
-                            $regex: country[0],
-                            $options: 'i'
-                        }
-                    }]
-                })
-                if (c) {
-                    post.hasCountry = true;
-                    post.latlng = c.latlng || 0;
-                    post.Lat = c.latlng[0] || 0;
-                    post.Lng = c.latlng[1] || 0;
-                }
-            }
-            //====================================
-            //          Setting Keyword
-            var hasKeyword = Filters.checkStrArr(entry.title, keywords)
-            if (hasKeyword) {
-                console.log('Progress'.progress, "Keyword detected: " , hasKeyword)
-                post.keyword = hasKeyword ? hasKeyword : null;
-                post.hasKeyword = true;
-            }
-            post.isBlank = false;
-            //====================================
-            //      If no Keywords
-            if (!c && !post.hasKeyword) {
-                console.log('Skipped'.red, "No Keyword nor, country is captured")
-                post.isBlank = true
-                return 
-            }
-            //=====================================
-            
-            // Cleaning Tags
-            delete post.categories
-            delete post["dc:creator"]
-            delete post["dc:date"]
-            //===================================== 
+
+            post.feedTitle = feed.title;
+            post.feedUrl = feed.feedUrl;
             post.srcURL = rss;
-            console.log('Inserting'.success , post.feedTitle, ": ", post.title)
-            // console.log(post)
-            Items.insert(post, (err) => {
-                if (err) {
-                    console.log('==== Insert Err')
-                    console.log('Post: Error', post)
-                }
-            })
+            //=====================================
+            checkPost(post)
             //=====================================
         })
     }))
 }
+
+
+
+
+function checkPost(post) {
+    //====================================
+    // Checking Country
+    var country = Filters.checkStrArr(post.title, countries);
+    if (country && country.length) {
+        // console.log('Progress '.progress,'Found Country: '.success, country, entry.title + ':' + entry.link);
+        var country = country.map((country) => {
+            return country.toLowerCase()
+        })
+        post.country = country;
+        // Find country
+        // var c = Countries.findOne({
+        //     $or: [{
+        //         'altSpellings': {
+        //             $regex: country[0],
+        //             $options: 'i'
+        //         }
+        //     }, {
+        //         'name.common': {
+        //             $regex: country[0],
+        //             $options: 'i'
+        //         }
+        //     }]
+        // })
+        // /** */
+        // if (c) {
+        //     post.hasCountry = true;
+        //     post.latlng = c.latlng || 0;
+        //     post.Lat = c.latlng[0] || 0;
+        //     post.Lng = c.latlng[1] || 0;
+        //     console.log('Progress'.progress, "Country detected: " , c.name.common)
+        // }else{
+        //     console.log('Skipped No country detected: ', post.title)
+        //     return 
+        // }
+    }
+    //====================================
+    //          Setting Keyword
+    var hasKeyword = Filters.checkStrArr(post.title, keywords)
+    if (hasKeyword && hasKeyword.length) {
+        console.log('Progress'.progress, "Keyword detected: ", hasKeyword)
+        post.keyword = hasKeyword ? hasKeyword : null;
+        post.hasKeyword = hasKeyword;
+    }
+
+    //====================================
+    if (post.country && post.country.length && post.keyword && post.keyword.length) {
+        post.isBlank = false
+        console.log('SUCCESS: Found Keyword and Country'.progress, post.title)
+        delete post.categories
+        delete post["dc:creator"]
+        delete post["dc:date"]
+        //====================
+        Items.insert(post, (err) => {
+            if (err) {
+                console.log('==== Insert Err')
+                console.log('Post: Error', post)
+            } else {
+                console.log('Inserting'.success, colors.green(post.feedTitle), ": ", post.title)
+            }
+        })
+
+       
+    }else{
+        console.log('Skipped: No Keyword nor, country is captured'.red, post.title)
+    }
+
+}
+
+//
 /** */
 checkFeeds = function (urls) {
     console.log('Checking URLS:', urls.length)
     _.each(urls, (url) => {
         console.log('url', url)
-        // Meteor.setTimeout(() => {
-        console.log('Checking Feed', url)
-        parseRSS(url)
-        // }, 1000 * _.random(10, 90))
+        Meteor.setTimeout(function () {
+            console.log('Checking Feed', url)
+            parseRSS(url)
+        }, 100 * _.random(10, 90))
     })
 }
 module.exports = checkFeeds

@@ -8,11 +8,14 @@ import '../lib/col.js'
 import App from './app/app.js'
 import './app/feeds.reader.js'
 import './data/countries.js'
+/* -------------------------------------------------------------------------- */
+//
 DbStats = {}
 DbStats.ItemsTotal = Items.find().count()
-DbStats.ItemsFilteredBoth = Items.find({isFeed: true, hasKeyword: {$exists:true}, country: {$exists:true}}).count()
-DbStats.ItemsFiltered = Items.find({isBlank:false}).count();
+DbStats.ItemsFilteredBoth = Items.find({hasKeyword: {$exists:true}, country: {$exists:true}}).count()
+DbStats.ItemsFilteredCountries = Items.find({isBlank:false}).count();
 DbStats.ItemsWithKeywords = Items.find({hasKeyword:true}).count();
+DbStats.both = Items.find({$and:[{ "country": { $exists: true, $ne: null }}, { "keyword": { $exists: true, $ne: null }}]}).count()
 log(JSON.stringify(DbStats, null, 2))
 CronConfigs = {
   freq: 3,
@@ -29,14 +32,11 @@ Meteor.startup(() => {
 Meteor.startup(() => {
 })
 
-if(Items.find().count() == 0){
-  checkFeeds(App.readAssets('feeds.txt', 'text'))
-}
+
 
 if (Meteor.isDevelopment) {
-  console.log('Development: Cron[Running]'.progress)
   console.log('IsDevelopment: '.success, Meteor.isDevelopment)
-  CronConfigs.cornLater = 'every 3 minutes'
+  CronConfigs.cornLater = 'every 1 minutes'
   // 
 } else {
   CronConfigs.cornLater = 'every 7 minutes'
@@ -53,11 +53,14 @@ SyncedCron.add({
     log(JSON.stringify(DbStats, null, 2))
   }
 });
-/** ----------------------------- */
+/* -------------------------------------------------------------------------- */
+//
 // 'items'
 Meteor.publish(null,function(options){
-  return Items.find({isFeed: true, hasKeyword: {$exists:true}, country: {$exists:true}},{limit:100})
+  return Items.find({$and:[{ "country": { $exists: true, $ne: null }}, { "keyword": { $exists: true, $ne: null }}]},{limit:200})
 })
+/* -------------------------------------------------------------------------- */
+
 /**
  * Setting Countries [Startup]
  */
@@ -71,9 +74,12 @@ function setCountries() {
       console.log('Setting', country.name.common)
       Countries.insert(country)
     })
-    console.log('====== Countries Data Set: Success =======')
+    console.log('====== Countries Data Set: Success ======='.progress)
+    if(Items.find().count() == 0){
+      checkFeeds(App.readAssets('feeds.txt', 'text'))
+    }
   } else {
-    console.log('====== Countries Data Set: SET: TRUE =======')
+    console.log('====== Countries Data Set: SET: TRUE ======='.progress)
   }
 }
 /** */
