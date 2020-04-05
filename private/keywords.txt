@@ -31,3 +31,6 @@ Xtandi
 Zoladex
 pharma
 Virus
+Coronavirus
+Covid-19
+Covid

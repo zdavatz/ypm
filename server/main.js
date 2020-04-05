@@ -32,7 +32,7 @@ Meteor.startup(() => {
 Meteor.startup(() => {
 })
 
-
+//
 
 if (Meteor.isDevelopment) {
   console.log('IsDevelopment: '.success, Meteor.isDevelopment)
