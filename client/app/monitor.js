@@ -1,15 +1,11 @@
 /**
  * 
 */
-
 import _ from 'lodash';
 import './monitor.html'
 import '../lib/data.engine.js'
 Meteor.startup(()=>{
-
 })
-
-
 function getFilters(items,field) {
     var countries = []
     _.map(items, (item) => {
@@ -26,29 +22,32 @@ function getFilters(items,field) {
     // var uniqCountries = _.uniq(newArr)
     return counts
 }
-
 /* -------------------------------------------------------------------------- */
-
 Template.registerHelper('items',()=>{
-
     var q = {}
-    if (App.getSetting('countryFiltered')) {
-        var country = App.getSetting('countryFiltered').toLowerCase()
+    if (App.getSetting('selectedCountry')) {
+        var country = App.getSetting('selectedCountry').toLowerCase()
         q.country = {
             '$in': [country]
         }
     }
 
-    return Items.find(q,{sort:{createdAt: -1}})
-});
+    if (App.getSetting('selectedKeyword')) {
+        var keyword = App.getSetting('selectedKeyword').toLowerCase()
+        q.keyword = {
+            '$in': [keyword]
+        }
+    }
 
+
+    return Items.find(q,{sort:{createdAt: -1}}).fetch()
+});
 /* -------------------------------------------------------------------------- */
 Template.registerHelper('filtered',()=>{
     var items = Items.find({},{sort:{createdAt: -1}}).fetch();
     var countries = getFilters(items, 'country');
     return countries
 })
-
 /* -------------------------------------------------------------------------- */
 Template.registerHelper('filteredKW',()=>{
     var items = Items.find({},{sort:{createdAt: -1}}).fetch();
