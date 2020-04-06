@@ -58,7 +58,7 @@ SyncedCron.add({
 //
 // 'items'
 Meteor.publish(null,function(options){
-  return Items.find({$and:[{ "country": { $exists: true, $ne: null }}, { "keyword": { $exists: true, $ne: null }}]},{limit:200, sort:{createdAt: -1}})
+  return Items.find({$and:[{ "country": { $exists: true, $ne: null }}, { "keyword": { $exists: true, $ne: null }}]},{limit:200, sort:{createdAt: -1}, fields:{content:0, comments: 0, "content:encoded": 0}})
 })
 /* -------------------------------------------------------------------------- */
 /**
