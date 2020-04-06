@@ -37,7 +37,7 @@
             {{/unless}}
             {{#each items}}
             <div class="notification is-white has-shadow-1" id="{{no}}">
-                <span class="is-pulled-right subtitle is-3 has-text-grey" style="margin-top:-20px;"><a href="#{{no}}">#{{no}}</a></span>
+                <span class="is-pulled-right subtitle is-6 has-text-grey" style="margin-top:-20px;"><a href="#{{no}}">#{{no}}</a></span>
 
                 <div class="tags is-tag-float">
                     <span class="tag is-outlinedx is-info is-small is-rounded is-disabled is-capitalized setSettings"
@@ -50,7 +50,7 @@
                
                 <p class="has-text-weight-bold">
                     <span class="has-text-info content is-small">{{feedTitle}}</span> - 
-                    <span class="has-text-primary content is-small">{{moFormat pubDate 'HH:mm:ss D-M-YYYY'}}</span>
+                    <span class="has-text-primary content is-small">{{moFormat pubDate 'HH:mm:ss D.M.YYYY'}}</span>
                     <span class="has-text-primary content is-small is-hidden">( {{moFromNow pubDate withoutSuffix}} )</span>
                 </p>
                 <a href="{{link}}" target="_blank" title="{{title}}" class=""> {{{title}}} </a> <br />
