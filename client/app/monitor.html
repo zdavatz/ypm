@@ -49,8 +49,9 @@
                 </div>
                
                 <p class="has-text-weight-bold">
-                    <span class="has-text-info content is-small">{{feedTitle}}</span> - <span
-                        class="has-text-primary content is-small">{{moFromNow createdAt withoutSuffix}}</span>
+                    <span class="has-text-info content is-small">{{feedTitle}}</span> - 
+                    <span class="has-text-primary content is-small">{{moFormat pubDate 'HH:mm:ss D-M-YYYY'}}</span>
+                    <span class="has-text-primary content is-small is-hidden">( {{moFromNow pubDate withoutSuffix}} )</span>
                 </p>
                 <a href="{{link}}" target="_blank" title="{{title}}" class=""> {{{title}}} </a> <br />
             </div>
