@@ -113,3 +113,6 @@ https://www.yahoo.com/news/rss/world
 https://www1.cbn.com/app_feeds/rss/news/rss.php?section=world&mobile=false
 https://www2.bfarm.de/lieferengpass/lieferengpassRSS.xml
 https://wwwnc.cdc.gov/eid/rss/ahead-of-print.xml
+http://www.politico.com/rss/healthcare.xml
+http://www.politico.com/rss/economy.xml
+http://www.politico.com/rss/politics08.xml
