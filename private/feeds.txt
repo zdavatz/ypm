@@ -55,8 +55,12 @@ https://www.cnbc.com/id/15837362/device/rss/rss.html2
 https://www.cnbc.com/id/19794221/device/rss/rss.html
 https://www.ctvnews.ca/rss/world/ctvnews-ca-world-public-rss-1.822289
 https://www.dailytelegraph.com.au/news/world/rss
+https://www.ema.europa.eu/en/agendas-and-minutes.xml
+https://www.ema.europa.eu/en/fees.xml
 https://www.ema.europa.eu/en/human-medicine-highlights-newsletter.xml
+https://www.ema.europa.eu/en/human-medicine-new.xml
 https://www.ema.europa.eu/en/new-human-medicine-new.xml
+https://www.ema.europa.eu/en/news.xml
 https://www.ema.europa.eu/en/orphan.xml
 https://www.ema.europa.eu/en/scientific-guidelines.xml
 https://www.ema.europa.eu/en/whats-new.xml
@@ -109,10 +113,3 @@ https://www.yahoo.com/news/rss/world
 https://www1.cbn.com/app_feeds/rss/news/rss.php?section=world&mobile=false
 https://www2.bfarm.de/lieferengpass/lieferengpassRSS.xml
 https://wwwnc.cdc.gov/eid/rss/ahead-of-print.xml
-https://www.ema.europa.eu/en/news.xml
-https://www.ema.europa.eu/en/new-human-medicine-new.xml
-https://www.ema.europa.eu/en/human-medicine-new.xml
-https://www.ema.europa.eu/en/human-medicine-highlights-newsletter.xml
-https://www.ema.europa.eu/en/fees.xml
-https://www.ema.europa.eu/en/agendas-and-minutes.xml
-https://www.ema.europa.eu/en/whats-new.xml
