@@ -23,17 +23,17 @@ CronConfigs = {
   prod: 7,
   cornLater: ""
 }
+/* -------------------------------------------------------------------------- */
+
 SyncedCron.start();
-/** */
+/* -------------------------------------------------------------------------- */
+
 Meteor.startup(() => {
   setCountries()
+  setItemNumbers()
 });
-/** isDevelopment */
-Meteor.startup(() => {
-})
 
-//
-
+/* -------------------------------------------------------------------------- */
 if (Meteor.isDevelopment) {
   console.log('IsDevelopment: '.success, Meteor.isDevelopment)
   CronConfigs.cornLater = 'every 1 minutes'
@@ -41,6 +41,7 @@ if (Meteor.isDevelopment) {
 } else {
   CronConfigs.cornLater = 'every 7 minutes'
 }
+/* -------------------------------------------------------------------------- */
 SyncedCron.add({
   name: 'CronParser',
   schedule: function (parser) {
@@ -60,10 +61,10 @@ Meteor.publish(null,function(options){
   return Items.find({$and:[{ "country": { $exists: true, $ne: null }}, { "keyword": { $exists: true, $ne: null }}]},{limit:200, sort:{createdAt: -1}})
 })
 /* -------------------------------------------------------------------------- */
-
 /**
  * Setting Countries [Startup]
  */
+/* -------------------------------------------------------------------------- */
 function setCountries() {
   var countriesDBCount = Countries.find().count();
   if (countriesDBCount == 0) {
@@ -82,7 +83,25 @@ function setCountries() {
     console.log('====== Countries Data Set: SET: TRUE ======='.progress)
   }
 }
-/** */
+/* -------------------------------------------------------------------------- */
+// Used for debugging
+// Items.update({},{$unset:{no:1}},{multi:true})
+function setItemNumbers(){
+  if(!Items.findOne({no:{$exists:true}})){
+    console.log('Items are not numbered'.red)
+    var items = Items.find({},{sort:{createdAt: 1}}).fetch();
+    _.each(items,(item)=>{
+      var i = App.getLastItemNo()
+      Items.update({_id : item._id},{$set:{no:i}})
+    })
+  }
+}
+/* -------------------------------------------------------------------------- */
+
+
+
+
+/* -------------------------------------------------------------------------- */
 // 
 // console.log(countries)
 // console.log(Filters.checkStrArr('USA is here', countries))

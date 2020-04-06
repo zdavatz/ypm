@@ -116,6 +116,8 @@ function checkPost(post) {
         delete post.categories
         delete post["dc:creator"]
         delete post["dc:date"]
+
+        post.no = App.getLastItemNo();
         //====================
         Items.insert(post, (err) => {
             if (err) {

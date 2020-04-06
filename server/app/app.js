@@ -32,4 +32,15 @@ app.readAssets = (file, type) => {
 }
 /* -------------------------------------------------------------------------- */
 
+app.getLastItemNo = function(){
+    var lastNumberedItem = Items.find({no:{$exists:true}},{sort:{no:-1},limit : 1}).fetch()
+    if(lastNumberedItem.length){
+      var lastNo = parseInt(lastNumberedItem[0].no) + 1
+      return lastNo
+    }else{
+      return 1
+    }
+  }
+
+
 module.exports = app;
