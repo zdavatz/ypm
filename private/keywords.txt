@@ -40,3 +40,8 @@ Export
 Hydroxychloroquine
 Stockout
 stock-out
+Midazolam
+Propofol
+Rocuronium Bromide
+Atracurium Besilat
+Cisatracurium
