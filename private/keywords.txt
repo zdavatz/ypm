@@ -36,3 +36,7 @@ Zoladex
 pharma
 Chloroquin
 Hydroxychloroquin
+Export
+Hydroxychloroquine
+Stockout
+stock-out
