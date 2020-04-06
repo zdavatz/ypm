@@ -37,3 +37,4 @@ pharma
 Chloroquin
 Hydroxychloroquin
 Export
+Hydroxychloroquine
