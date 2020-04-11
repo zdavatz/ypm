@@ -80,3 +80,5 @@ Zoladex
 Zonisamid
 pharma
 stock-out
+Bluetooth
+Contact tracing
