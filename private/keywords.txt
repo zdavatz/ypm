@@ -84,3 +84,6 @@ Bluetooth
 Contact tracing
 Narkose
 Narkosemittel
+Drone
+Italy
+Temperature
