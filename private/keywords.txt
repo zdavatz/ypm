@@ -86,3 +86,6 @@ Narkose
 Narkosemittel
 Drone
 Temperature
+FDA
+Drug manufacturers
+Generic drugs
