@@ -90,3 +90,4 @@ FDA
 Drug manufacturers
 Generic drugs
 Swiss National COVID-19 Science Task Force
+Zoonotic
