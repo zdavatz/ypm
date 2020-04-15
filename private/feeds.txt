@@ -123,3 +123,4 @@ https://www.economist.com/business/rss.xml
 https://www.economist.com/finance-and-economics/rss.xml
 https://www.economist.com/science-and-technology/rss.xml
 https://www.economist.com/special-report/rss.xml
+https://www.scienceindustries.ch/rss/_action-406/rss/_svwid-call-406/406
