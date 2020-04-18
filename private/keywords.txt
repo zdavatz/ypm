@@ -1,6 +1,8 @@
 ADT
+APN01
 Abiraterone
 Active Agent
+Active Track
 Amoxicillin
 Androgendeprivationstherapie
 Antibiotics
@@ -8,6 +10,7 @@ Apalutamide
 Atracurium Besilat
 Azithromycin
 Bicalutamide
+Bluetooth
 Brivaracetam
 Carbamazepine
 Casodex
@@ -17,6 +20,7 @@ Chloroquin
 Cisatracurium
 Clobazam
 Clonazepam
+Contact tracing
 Corona
 Coronavirus
 Covid
@@ -24,7 +28,10 @@ Covid-19
 Covid19
 Dafalgan
 Darolutamide
+Darunavir
 Degarelix
+Drone
+Drug manufacturers
 Drugshortage
 Enzalutamide
 Epinephrine
@@ -32,9 +39,13 @@ Erleada
 Ethosuximid
 Europa
 Export
+FDA
+Favipiravir
 Fentanyl
 Firmagon
+GSK
 Generic
+Generic drugs
 Generics
 GnRH-ANaloga
 Goserelin
@@ -54,6 +65,9 @@ Lorazepam
 Lucrin
 Midazolam
 Morphine
+Narkose
+Narkosemittel
+Novartis
 Nubequa
 Oxcarbazepine
 Paracetamol
@@ -64,11 +78,18 @@ Phenytoin
 Pneumococcal
 Primidon
 Propofol
+Remdesivir
 Ritonavir
 Rocuronium Bromide
 Rufinamid
+SARS-CoV-2
+Sandoz
 Schweiz
 Stockout
+Swiss National COVID-19 Science Task Force
+Temperature
+Tesla
+Teva
 Tocilizumab
 Topiramat
 Triazolam
@@ -78,24 +99,7 @@ Virus
 Xtandi
 Zoladex
 Zonisamid
-pharma
-stock-out
-Bluetooth
-Contact tracing
-Narkose
-Narkosemittel
-Drone
-Temperature
-FDA
-Drug manufacturers
-Generic drugs
-Swiss National COVID-19 Science Task Force
 Zoonotic
+pharma
 post-coronavirus
-Sandoz
-Novartis
-Tesla
-Teva
-GSK
-Drone
-Active Track
+stock-out
