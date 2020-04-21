@@ -1,5 +1,6 @@
 ADT
 APN01
+Abbott
 Abiraterone
 Active Agent
 Active Track
@@ -47,6 +48,8 @@ GSK
 Generic
 Generic drugs
 Generics
+Genetics
+Genom
 GnRH-ANaloga
 Goserelin
 Heparin
@@ -100,9 +103,8 @@ Xtandi
 Zoladex
 Zonisamid
 Zoonotic
+antibody
+antibody test
 pharma
 post-coronavirus
 stock-out
-antibody test
-Abbott
-antibody
