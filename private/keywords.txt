@@ -63,9 +63,12 @@ Lamotrigine
 Leuprorelin
 Levetiracetam
 Lieferengpass
+Lieferengpass-Datenbank
 Lopinavir
 Lorazepam
 Lucrin
+Maskepflicht
+Medikament
 Midazolam
 Morphine
 Narkose
