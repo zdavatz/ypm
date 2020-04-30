@@ -113,3 +113,4 @@ antibody test
 pharma
 post-coronavirus
 stock-out
+exposure notification
