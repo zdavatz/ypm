@@ -244,3 +244,4 @@ https://www1.cbn.com/app_feeds/rss/news/rss.php?section=world&mobile=false
 https://www2.bfarm.de/lieferengpass/lieferengpassRSS.xml
 https://wwwnc.cdc.gov/eid/rss/ahead-of-print.xml
 http://www.pharmazeutische-zeitung.de/fileadmin/rss/pz_online_rss.php
+https://developer.apple.com/news/releases/rss/releases.rss
