@@ -8,6 +8,7 @@ Amoxicillin
 Androgendeprivationstherapie
 Antibiotics
 Apalutamide
+Apple
 Atracurium Besilat
 Azithromycin
 Bicalutamide
@@ -51,6 +52,7 @@ Generics
 Genetics
 Genom
 GnRH-ANaloga
+Google
 Goserelin
 Heparin
 Hormonentzugstherapie
