@@ -1,4 +1,3 @@
-
 http://3dprinting.com/feed/
 http://3dprintingindustry.com/feed/
 http://aiweekly.co/issues.rss
@@ -21,8 +20,14 @@ http://feeds.bbci.co.uk/news/world/rss.xml
 http://feeds.feedburner.com/OutbreakNewsToday
 http://feeds.feedburner.com/ProgrammableWeb
 http://feeds.feedburner.com/SmallBusinessTrends
+http://feeds.feedburner.com/TechCrunch/Android
+http://feeds.feedburner.com/TechCrunch/Apple
+http://feeds.feedburner.com/TechCrunch/Microsoft
+http://feeds.feedburner.com/TechCrunch/startups
 http://feeds.feedburner.com/Techcrunch
+http://feeds.feedburner.com/Techcrunch/europe
 http://feeds.feedburner.com/TheWirecutter
+http://feeds.feedburner.com/crunchgear
 http://feeds.feedburner.com/daily-express-world-news
 http://feeds.feedburner.com/forentrepreneurs
 http://feeds.feedburner.com/mitsmr
@@ -115,6 +120,7 @@ http://www.newslookup.com/rss/business/cnbc.rss
 http://www.nytimes.com/services/xml/rss/nyt/Business.xml
 http://www.nytimes.com/services/xml/rss/nyt/Technology.xml
 http://www.pharmabiz.com/Includes/xmlInclude/Pharmabizrss.xml
+http://www.pharmazeutische-zeitung.de/fileadmin/rss/pz_online_rss.php
 http://www.politico.com/rss/economy.xml
 http://www.politico.com/rss/healthcare.xml
 http://www.politico.com/rss/politics08.xml
@@ -137,6 +143,7 @@ http://www.washingtonpost.com/wp-dyn/rss/business/index.xml
 http://www.wired.co.uk/rss.aspx
 https://abcnews.go.com/abcnews/internationalheadlines
 https://blogs.informatica.com/tag/digital-transformation/feed/
+https://developer.apple.com/news/releases/rss/releases.rss
 https://feedity.com/swissmedic-ch/UlNSUlBRVw.rss
 https://feedity.com/swissmedic-ch/UlNSUlBSWg.rss
 https://feeds.a.dj.com/rss/RSSMarketsMain.xml
@@ -243,5 +250,3 @@ https://www.yahoo.com/tech/rss
 https://www1.cbn.com/app_feeds/rss/news/rss.php?section=world&mobile=false
 https://www2.bfarm.de/lieferengpass/lieferengpassRSS.xml
 https://wwwnc.cdc.gov/eid/rss/ahead-of-print.xml
-http://www.pharmazeutische-zeitung.de/fileadmin/rss/pz_online_rss.php
-https://developer.apple.com/news/releases/rss/releases.rss
