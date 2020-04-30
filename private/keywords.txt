@@ -115,3 +115,6 @@ pharma
 post-coronavirus
 stock-out
 Xcode
+tobacco
+nicotine
+cytokine storm
