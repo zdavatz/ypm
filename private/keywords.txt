@@ -42,6 +42,7 @@ Ethosuximid
 Europa
 Export
 FDA
+Face Mask
 Favipiravir
 Fentanyl
 Firmagon
@@ -66,12 +67,15 @@ Leuprorelin
 Levetiracetam
 Lieferengpass
 Lieferengpass-Datenbank
+Lonza
 Lopinavir
 Lorazepam
 Lucrin
+Mask
 Maskepflicht
 Medikament
 Midazolam
+Moderna
 Morphine
 Narkose
 Narkosemittel
@@ -104,22 +108,18 @@ Triazolam
 Vaccine
 Valproic acid
 Virus
+Xcode
 Xtandi
 Zoladex
 Zonisamid
 Zoonotic
 antibody
 antibody test
+cytokine storm
 exposure notification
+nicotine
 pharma
 post-coronavirus
-stock-out
-Xcode
-tobacco
-nicotine
-cytokine storm
-Moderna
-Lonza
 spit
-Mask
-Face Mask
+stock-out
+tobacco
