@@ -42,6 +42,9 @@ if (Meteor.isDevelopment) {
   CronConfigs.cornLater = 'every 7 minutes'
 }
 /* -------------------------------------------------------------------------- */
+
+var feedsList = App.readAssets('feeds.txt', 'text')
+/* -------------------------------------------------------------------------- */
 SyncedCron.add({
   name: 'CronParser',
   schedule: function (parser) {
@@ -49,7 +52,7 @@ SyncedCron.add({
   },
   job: function () {
     console.log('SyncdCron: Feed Parser {CHECK}')
-    checkFeeds(App.readAssets('feeds.txt', 'text'))
+    checkFeeds(feedsList)
     console.log('SyncdCron: Feed Parser {SUCCESS}')
     log(JSON.stringify(DbStats, null, 2))
   }
