@@ -20,7 +20,6 @@ typescript@3.7.6              # Enable TypeScript syntax in .ts and .tsx modules
 shell-server@0.5.0            # Server-side component of the `meteor shell` command
 
 insecure@1.0.7                # Allow all DB writes from clients (for prototyping)
-hamzamu:settings
 session@1.2.0
 mystor:device-detection
 momentjs:moment
@@ -28,3 +27,4 @@ localstorage@1.2.0
 lbee:moment-helpers
 littledata:synced-cron
 random@1.2.0
+hamzamu:settings
