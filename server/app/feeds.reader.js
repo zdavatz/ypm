@@ -25,9 +25,6 @@ parseRSS = function (rss) {
         if (err) {
             console.log('-----------------Err------------------')
             console.log('Feed parser Err'.red, rss)
-            console.log("this is an error".error);
-            console.log(err)
-            console.log('-----------------------------------')
             return
         }
         console.log('Progress: '.green, rss);
@@ -126,11 +123,7 @@ function checkPost(post) {
             } else {
                 console.log('Inserting'.success, colors.green(post.feedTitle), ": ", post.title)
             }
-        })
-
-       
-    }else{
-        console.log('Skipped: No Keyword nor, country is captured'.red, post.title)
+        })       
     }
 
 }
@@ -138,13 +131,11 @@ function checkPost(post) {
 //
 /** */
 checkFeeds = function (urls) {
-    console.log('Checking URLS:', urls.length)
     _.each(urls, (url) => {
-        console.log('url', url)
         Meteor.setTimeout(function () {
             console.log('Checking Feed', url)
             parseRSS(url)
-        }, 100 * _.random(10, 90))
+        }, 100 * _.random(10, 300))
     })
 }
 module.exports = checkFeeds

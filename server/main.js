@@ -25,6 +25,13 @@ CronConfigs = {
 }
 /* -------------------------------------------------------------------------- */
 
+
+Meteor.startup( function() {
+  process.env.TOOL_NODE_FLAGS = "--max_old_space_size=4096";
+ });
+
+/* -------------------------------------------------------------------------- */
+
 SyncedCron.start();
 /* -------------------------------------------------------------------------- */
 
@@ -51,7 +58,6 @@ SyncedCron.add({
     return parser.text(CronConfigs.cornLater);
   },
   job: function () {
-    console.log('SyncdCron: Feed Parser {CHECK}')
     checkFeeds(feedsList)
     console.log('SyncdCron: Feed Parser {SUCCESS}')
     log(JSON.stringify(DbStats, null, 2))
