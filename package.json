@@ -18,7 +18,7 @@
     "meteor-node-stubs": "^1.0.0",
     "npm": "^6.14.6",
     "rss-parser": "^3.7.6",
-    "sheetrock": "^1.1.4"
+    "sheetrock": "^1.2.0"
   },
   "meteor": {
     "mainModule": {
